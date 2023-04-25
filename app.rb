@@ -1,3 +1,5 @@
+require 'csv'
+
 # 7.1 Método 'Add':
 # 7.2 Precisamos perguntar ao usuário qual o nome do presente
 # 7.3 Perguntamos ao usuário o preço do item
@@ -56,7 +58,5 @@ def mark(gift_list)
 
     # Em vez de deletarmos, precisamos buscar na lista, qual o item a ser marcado
     gift = gift_list[user_index - 1]
-
-    gift[:bought] = true
-    # gist_list.mark_at(user_index - 1)
+    gift[:bought] = true # Marcamos o atributo 'bought' do item da lista como verdadeiro
 end
