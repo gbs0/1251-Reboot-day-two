@@ -74,3 +74,6 @@ def load_csv(file_path)
   gift_list
 end
 
+# 12. Método 'save_csv':
+# 12.1 
+
