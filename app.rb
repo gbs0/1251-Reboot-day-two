@@ -60,3 +60,13 @@ def mark(gift_list)
     gift = gift_list[user_index - 1]
     gift[:bought] = true # Marcamos o atributo 'bought' do item da lista como verdadeiro
 end
+
+# 11. Metodo 'load_csv':
+# 11.1 Receber um caminho de arquivo csv.
+# 11.2 Abrir o CSV
+# 11.3 P/ cada linha do CSV, vamos criar um hash p/ representar os items
+# 11.4 Retornar uma lista com os items do CSV
+def load_csv(file_path)
+  CSV.foreach("data/gifts.csv", headers: :first_row)
+end
+
