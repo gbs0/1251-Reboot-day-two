@@ -9,7 +9,7 @@ gift_list = [{"name": "Playtation 5", "price": 4999}]
 # 1. Mostrar ao usuário uma mensagem de boas vindas!
 puts "⭐️ Welcome to Christmas list! 🎄"
 
-loop do # Se repete enquanto o usuário não chegar no `exit` da linha 28
+loop do # Se repete enquanto o usuário não chegar no `exit` da linha 28 
 
   # 2. Mostra o menu de opções p/ o usuário
   puts "Which action you want to perform? [Type: list | add | delete | quit]"
