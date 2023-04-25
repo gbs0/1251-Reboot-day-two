@@ -23,8 +23,6 @@ end
 # 8.1 Receber a lista de presentes p/ mostrar na tela  
 # 8.2 Mostrar os itens da lista (nome - preço) de forma e númerada
 def list(gift_list)
-  # 1 - [ ] Playstation 5 | $ 5000
-  # 2 - [X] Cd Naldo | $ 50
   gift_list.each_with_index do |gift, index|
     if gift[:bought] # true / false
         checkbox = "[X]"
@@ -67,6 +65,12 @@ end
 # 11.3 P/ cada linha do CSV, vamos criar um hash p/ representar os items
 # 11.4 Retornar uma lista com os items do CSV
 def load_csv(file_path)
-  CSV.foreach("data/gifts.csv", headers: :first_row)
+  gift_list = []
+  CSV.foreach("data/gifts.csv", headers: :first_row) do |line|
+    bought = line['Bought'] == "true"
+    gift = {"name": line['Name'], "price": line['Price'].to_i, "bought": bought}
+    gift_list << gift
+  end
+  gift_list
 end
 

@@ -1,11 +1,10 @@
-
+require 'pry'
 require_relative 'app'
 # Escreva um programa em Ruby, que seja resonsável por guardar uma lista de desejos de presentes.
 
 # 0. Criamos uma lista inicial p/ guardar alguns items
 file_path = "data/gifts.csv"
 gift_list = load_csv(file_path)
-
 
 # Pseudo Código:
 # 1. Mostrar ao usuário uma mensagem de boas vindas!
