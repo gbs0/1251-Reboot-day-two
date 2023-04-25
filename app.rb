@@ -15,4 +15,11 @@ def add(gift_list)
   # 7.5 Guardar o presente na lista de presentes
   gift_list << gift
 end
-  
+
+# 8. Método 'List':
+# 8.1   
+# 8.2 Mostrar os itens da lista de forma ordenada e númerada
+# 8.3
+# 8.4
+def list
+end
