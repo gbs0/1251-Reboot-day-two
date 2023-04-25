@@ -1,6 +1,8 @@
-require_relative 'app'
 
+require_relative 'app'
 # Escreva um programa em Ruby, que seja resonsável por guardar uma lista de desejos de presentes.
+
+# 0. Criamos uma lista inicial p/ guardar alguns items
 gift_list = [{"name": "Playtation 5", "price": 4999}]
 
 # Pseudo Código:
@@ -32,11 +34,11 @@ loop do # Se repete enquanto o usuário não chegar no `exit` da linha 28
     end
   end
 
-  # 5. Chamamos a função dispatch p/ lidar com a escolha do user
+  # 5. Chamamos a função dispatch p/ lidar com a escolha do user (invoca o método acima)
   dispatch(gift_list, user_option)
 
-  # 6. Fazer o programa repetir enquanto o usuário não escolher sair.
+  # 6. Fazer o programa repetir enquanto o usuário não digitar 'quit'.
 end
 
-# 7. Implementar os métodos da lista de presentes (Add, delete, list)
-# Toda a lógica da lista, estará no arquivo app.rb
+# 7. Implementar os métodos da lista de presentes (Add, list, delete)
+# Toda a lógica responsável por manipular a lista, estará no arquivo app.rb
