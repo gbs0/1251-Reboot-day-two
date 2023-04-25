@@ -17,6 +17,9 @@ def add(gift_list)
   
   # 7.5 Guardar o presente na lista de presentes
   gift_list << gift
+
+  # 7.6 Chamar a função p/ salver a lista de presentes no CSV
+  save_csv(gift_list)
 end
 
 # 8. Método 'List':
@@ -43,6 +46,7 @@ def delete(gift_list)
   user_index = gets.chomp.to_i
 
   gift_list.delete_at(user_index - 1)
+  save_csv(gift_list)
 end
 
 # 10. Método 'Mark':
@@ -57,6 +61,8 @@ def mark(gift_list)
     # Em vez de deletarmos, precisamos buscar na lista, qual o item a ser marcado
     gift = gift_list[user_index - 1]
     gift[:bought] = true # Marcamos o atributo 'bought' do item da lista como verdadeiro
+
+    save_csv(gift_list)
 end
 
 # 11. Metodo 'load_csv':
@@ -64,7 +70,7 @@ end
 # 11.2 Abrir o CSV
 # 11.3 P/ cada linha do CSV, vamos criar um hash p/ representar os items
 # 11.4 Retornar uma lista com os items do CSV
-def load_csv(file_path)
+def load_csv
   gift_list = []
   CSV.foreach("data/gifts.csv", headers: :first_row) do |line|
     bought = line['Bought'] == "true"
@@ -78,8 +84,8 @@ end
 # 12.1 Receber o caminho do arquivo que será salvo.
 # 12.2 Abrir o arquivo
 # 12.3 Iterar sobre a lista de presentes, e para cada item, escrevemos suas infos no csv.
-def save_csv(file_path)
-  CSV.open(file_path, "wb", col_sep: ",") do |csv|
+def save_csv(gift_list)
+  CSV.open("data/gifts.csv", "wb", col_sep: ",") do |csv|
     csv << ["Name", "Price" ,"Bought"]
     gift_list.each do |gift| # gift = {"name": "Playstation 5", "price": 5000, bought: false}
       csv << [gift[:name], gift[:price], gift[:bought]]
