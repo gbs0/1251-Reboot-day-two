@@ -30,7 +30,7 @@ loop do # Se repete enquanto o usuário não chegar no `exit` da linha 28
       puts "Bye bye!"
       exit
     else
-      puts "Invalid option! [Choose list | add | delete | quit]"
+      puts "Invalid option! [Choose: list | add | delete | quit]"
     end
   end
 
