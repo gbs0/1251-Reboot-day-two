@@ -7,20 +7,21 @@ gift_list = [{"name": "Playtation 5", "price": 4999}]
 # 1. Mostrar ao usuário uma mensagem de boas vindas!
 puts "⭐️ Welcome to Christmas list! 🎄"
 
-loop do
-  # 2. Mostrar o menu de opções p/ o usuário
-  puts "Which action you want to perform? [Type list | add | delete | quit]"
+loop do # Se repete enquanto o usuário não chegar no `exit` da linha 28
 
-  # 3. Guardar qual a opção escolhida pelo usuário
+  # 2. Mostra o menu de opções p/ o usuário
+  puts "Which action you want to perform? [Type: list | add | delete | quit]"
+
+  # 3. Guarda qual a opção escolhida pelo usuário
   user_option = gets.chomp.downcase
 
-  # 4. Performar a ação escolhida pelo usuário.
+  # 4. Performa a ação escolhida pelo usuário (este método é responsável por chamar outros métodos).
   def dispatch(gift_list, user_option)
     case user_option
     when "list"
       puts "Listing..."
     when "add"
-      add(gift_list)
+      add(gift_list) # Adiciona o item novo na lista de presentes
     when "delete"
       puts "Deleting..."  
     when "quit"
