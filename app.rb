@@ -17,9 +17,8 @@ def add(gift_list)
 end
 
 # 8. Método 'List':
-# 8.1   
-# 8.2 Mostrar os itens da lista de forma ordenada e númerada
-# 8.3
-# 8.4
-def list
+# 8.1 Receber a lista de presentes p/ mostrar na tela  
+# 8.2 Mostrar os itens da lista (nome - preço) de forma ordenada e númerada
+def list(gift_list)
+
 end

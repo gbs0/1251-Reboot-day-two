@@ -21,7 +21,7 @@ loop do # Se repete enquanto o usuário não chegar no `exit` da linha 28
   def dispatch(gift_list, user_option)
     case user_option
     when "list"
-      puts "Listing..."
+      list(gift_list) # Mostra no terminal, os items que foram inseridos dentro da lista de presentes.
     when "add"
       add(gift_list) # Adiciona o item novo na lista de presentes
     when "delete"
