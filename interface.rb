@@ -1,5 +1,6 @@
 require 'pry'
 require_relative 'app'
+require_relative 'scraper'
 # Escreva um programa em Ruby, que seja resonsável por guardar uma lista de desejos de presentes.
 
 # 0. Criamos uma lista inicial p/ guardar alguns items
@@ -12,7 +13,7 @@ puts "⭐️ Welcome to Christmas list! 🎄"
 loop do # Se repete enquanto o usuário não chegar no `exit` da linha 28 
 
   # 2. Mostra o menu de opções p/ o usuário
-  puts "Which action you want to perform? [Type: list | add | delete | mark | quit]"
+  puts "Which action you want to perform? [Type: list | add | delete | mark | search OR quit]"
 
   # 3. Guarda qual a opção escolhida pelo usuário
   user_option = gets.chomp.downcase
@@ -31,6 +32,8 @@ loop do # Se repete enquanto o usuário não chegar no `exit` da linha 28
       list(gift_list)     # Lista os itens atuais da lista
       mark(gift_list)     # Pergunta ao user, qual o item a ser deletado
       list(gift_list)     # Lista novamente os itens que foram marcados
+    when "search"
+      search(gift_list)
     when "quit"
       puts "Bye bye!"
       exit
