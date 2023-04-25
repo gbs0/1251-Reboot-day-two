@@ -25,7 +25,8 @@ loop do # Se repete enquanto o usuário não chegar no `exit` da linha 28
     when "add"
       add(gift_list) # Adiciona o item novo na lista de presentes
     when "delete"
-      puts "Deleting..."  
+      list(gift_list) # Lista os itens atuais da lista
+      delete(gift_list) # Pergunta ao user, qual o item a ser deletado
     when "quit"
       puts "Bye bye!"
       exit

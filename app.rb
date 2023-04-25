@@ -18,10 +18,21 @@ end
 
 # 8. Método 'List':
 # 8.1 Receber a lista de presentes p/ mostrar na tela  
-# 8.2 Mostrar os itens da lista (nome - preço) de forma ordenada e númerada
+# 8.2 Mostrar os itens da lista (nome - preço) de forma e númerada
 def list(gift_list)
   # 1 - Playstation 5 | $ 5000
   gift_list.each_with_index do |gift, index|
     puts "#{index + 1} - #{gift[:name]} | $ #{gift[:price]}"
   end
+end
+
+# 9. Método 'Delete':
+# 9.1 Receber a lista de itens na qual será removido o item. 
+# 9.2 Apresentar a lista com os itens atuais.
+# 9.3 Perguntar ao usuário qual o indíce do item que irá apagar.
+# 9.4 Deletar o item da lista que corresponde ao indice q/ o usuário selecionou
+def delete(gift_list)
+  puts "What's the item number you want to delete?"
+  user_index = gets.chomp.to_i
+  gift_list.delete_at(user_index - 1)
 end
