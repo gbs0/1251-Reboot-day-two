@@ -75,9 +75,16 @@ def load_csv(file_path)
 end
 
 # 12. Método 'save_csv':
-# 12.1 
-# 12.2
-# 12.3
-# 12.4 
+# 12.1 Receber o caminho do arquivo que será salvo.
+# 12.2 Abrir o arquivo
+# 12.3 Iterar sobre a lista de presentes, e para cada item, escrevemos suas infos no csv.
+def save_csv(file_path)
+  CSV.open(file_path, "wb", col_sep: ",") do |csv|
+    csv << ["Name", "Price" ,"Bought"]
+    gift_list.each do |gift| # gift = {"name": "Playstation 5", "price": 5000, bought: false}
+      csv << [gift[:name], gift[:price], gift[:bought]]
+    end
+  end
+end
 
 
